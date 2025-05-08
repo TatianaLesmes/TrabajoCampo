@@ -1,0 +1,178 @@
+.login {
+    min-height: 80vh;
+  }
+  
+  .bg-image {
+    background-image: url("/img/virgen1.png?v=1");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+  }
+  
+  .login-heading {
+    font-weight: 300;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .carousel-item {
+    height: 400px; /* Ajusta este valor según tus necesidades */
+  }
+  
+  .form-control-dark {
+    color: #fff;
+    background-color: var(--bs-dark);
+    border-color: var(--bs-gray);
+  }
+  .form-control-dark:focus {
+    color: #fff;
+    background-color: var(--bs-dark);
+    border-color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  .text-small {
+    font-size: 85%;
+  }
+  
+  .dropdown-toggle {
+    outline: 0;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    #imagen {
+      width: 60vw; /* Ajusta el ancho al 100% del contenedor */
+      height: 70vh; /* Ajusta la altura automáticamente para mantener la proporción */
+      /* Otros estilos que desees aplicar */
+    }
+  }
+  
+  
+  .imagen-highlight {
+    outline: 2px dashed blue;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      outline-color: transparent;
+    }
+  }
+
+
+  .fuente-bonita {
+    font-family: 'Playfair Display', serif; /* o 'Great Vibes', cursive si quieres algo más cursivo */
+    color: #5a3e36; /* Puedes elegir otro color si deseas */
+    font-weight: bold;
+  }
+
+
+  .fuente-nav {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #333; /* Puedes cambiar el color si quieres */
+  }
+
+  .contenedor-header {
+    background-color: white !important;
+    border-radius: 0 !important;
+    padding: 1rem 2rem;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+  
+
+  .contenedor-header img {
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+  }
+  
+  .contenedor-header .fs-4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-pills .nav-link {
+    margin: 0 0.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+  }
+  
+  .nav-pills .nav-link:hover {
+    background-color: #dee2e6;
+    color: #000;
+  }
+
+
+  @media (max-width: 768px) {
+    .contenedor-header {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center;
+    }
+  
+    .contenedor-header ul.nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .contenedor-header a.nav-link {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+
+  .nav-pills .nav-link {
+    background-color: #fff5e6;
+    color: #5a3e36;
+  }
+  .nav-pills .nav-link:hover {
+    background-color: #fbeacc;
+  }
+  
+  
+  img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+  }
+  
+
+
+  
+  
