@@ -162,7 +162,7 @@ function registerUser() {
         role: "Usuario"
     };
 
-    fetch('https://api-parroquia.onrender.com/auth/register', {
+    fetch('http://localhost:3000/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -200,7 +200,7 @@ function registerUser() {
 
 const getAllDocumentData = async () => {
     try {
-        const response = await fetch('https://api-parroquia.onrender.com/documentType/', {
+        const response = await fetch('http://localhost:3000/documentType/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
