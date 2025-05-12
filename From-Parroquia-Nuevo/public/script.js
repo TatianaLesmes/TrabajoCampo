@@ -143,20 +143,15 @@ function registerUser() {
         return;
     }
 
-    const typeDocumentMap = {
-        "cedula": "66904ea3ca8a0fc2e67df521",
-        "tarjeta": "66904eaeca8a0fc2e67df523",
-        // Agrega más mappings según sea necesario
-    };
 
-    const typeDocumentID = typeDocumentMap[typeDocument];
+
 
     const userData = {
         name,
         lastName,
         birthdate,
         documentNumber,
-        typeDocument: typeDocumentID,
+        typeDocument,
         mail: email,
         password,
         role: "Usuario"
@@ -184,14 +179,11 @@ function registerUser() {
             }
         })
         .catch(error => {
+                messageDiv.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+                console.error('Error:', error.message);
+});
 
 
-
-            messageDiv.innerHTML = `<div class="alert alert-danger">El numero de Documento ya existe</div>`;
-            console.error('Error:', error);
-
-
-        });
 }
 
 // Asegúrate de que el botón "Crear cuenta" en el tercer paso llame a esta función
