@@ -214,6 +214,23 @@ const getAllDocumentData = async () => {
     }
 };
 
+
+// Función para obtener y mostrar el Salmo del día
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('http://localhost:3000/api/salmo')
+        .then(response => response.json())
+        .then(data => {
+            const textoSalmo = document.getElementById("textoSalmo");
+            if (textoSalmo) {
+                textoSalmo.textContent = data.salmo || "No se encontró el salmo.";
+            }
+        })
+        .catch(error => {
+            console.error("Error al obtener el salmo:", error);
+        });
+});
+
+
 getAllDocumentData().then(documentData => {
     console.log('Document Data:', documentData); // Imprimir los datos devueltos
 });

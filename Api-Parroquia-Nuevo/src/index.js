@@ -2,6 +2,7 @@ require('dotenv').config();
 const express= require('express');
 const morgan = require('morgan');
 const cors = require('cors')
+const salmoRoutes = require('./routes/salmo');
 
 
 const app = express();
@@ -19,7 +20,7 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors())
 
-
+app.use("/api/salmo", salmoRoutes);
 // Routes
 app.use(require('./routes'))
 
