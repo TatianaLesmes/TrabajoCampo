@@ -47,24 +47,46 @@ module.exports = {
     },
 
     getTimeSlots: async (req, res) => {
-        const { date } = req.query;
+    const { date } = req.query;
     
-        try {
-            const schedule = await MassSchedule.findOne({ date: new Date(date).toISOString().split('T')[0] });
-    
-            if (!schedule) {
-                return res.status(404).json({ message: 'No se encontraron horarios para esta fecha' });
-            }
-    
-            // Filtrar solo los horarios con estado "Libre"
-            const availableTimeSlots = schedule.timeSlots.filter(slot => slot.status === "Libre");
-            res.status(200).json({ timeSlots: availableTimeSlots });
-        } catch (error) {
-            console.error('Error al obtener los horarios:', error);
-            res.status(500).json({ message: 'Error al obtener los horarios', error });
-        }
-    },
+    // Validación básica
+    if (!date) {
+        return res.status(400).json({ 
+            success: false,
+            message: 'El parámetro date es requerido en el query string' 
+        });
+    }
 
+    try {
+        // Normaliza la fecha (elimina la parte de tiempo)
+        const normalizedDate = new Date(date).toISOString().split('T')[0];
+        
+        // Busca en la base de datos
+        const schedule = await MassSchedule.findOne({ 
+            date: normalizedDate 
+        });
+
+        // Siempre devuelve un array, incluso si no hay registros
+        const availableTimeSlots = schedule?.timeSlots?.filter(slot => 
+            slot.status === "Libre" && slot.available !== false
+        ) || []; // Array vacío como fallback
+
+        res.status(200).json({
+            success: true,
+            date: normalizedDate,
+            timeSlots: availableTimeSlots,
+            message: availableTimeSlots.length ? 'Horarios encontrados' : 'No hay horarios disponibles'
+        });
+
+    } catch (error) {
+        console.error('Error en getTimeSlots:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error interno del servidor',
+            error: error.message
+        });
+    }
+},
     removeTimeSlots: async (req, res) => {
         const { date, timeSlots } = req.body;
       

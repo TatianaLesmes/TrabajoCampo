@@ -222,36 +222,46 @@ function enviarPartida(partidaId) {
         });
 }
 function EliminarPartida(partidaId) {
-    console.log('Intentando eliminar partida con ID:', partidaId);
-    fetch(`http://localhost:3000/requestDeparture/${partidaId}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        },
-    })
-        .then(response => {
-            console.log('Respuesta recibida:', response);
-            if (!response.ok) {
-                return response.json().then(err => {
-                    console.error('Error en la respuesta:', err);
-                    throw new Error(err.message || `Error al eliminar la partida. Estado: ${response.status}`);
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {   
+            if (result.isConfirmed) {
+                // Si el usuario confirma, proceder con la eliminación
+                console.log('Intentando eliminar partida con ID:', partidaId);
+                fetch(`http://localhost:3000/requestDeparture/${partidaId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
+                    },
+                
+            }).then(response => {
+                console.log('Respuesta recibida:', response);
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        console.error('Error en la respuesta:', err);
+                        throw new Error(err.message || `Error al eliminar la partida. Estado: ${response.status}`);
+                    });
+                }
+                return response.json();
+            }).then(data => {
+                console.log('Partida eliminada exitosamente:', data);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: data.message || 'La partida fue eliminada correctamente',
+                }).then(() => {
+                    cargarPartidasPendientes();
+                    cargarPartidasEnviadas();
                 });
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Partida eliminada exitosamente:', data);
-            Swal.fire({
-                icon: 'success',
-                title: 'Éxito',
-                text: data.message || 'La partida fue eliminada correctamente',
-            }).then(() => {
-                cargarPartidasPendientes();
-                cargarPartidasEnviadas();
-            });
-        })
-        .catch(error => {
+            }).catch(error => {
             console.error('Error detallado al eliminar la partida:', error);
             Swal.fire({
                 icon: 'error',
@@ -259,4 +269,6 @@ function EliminarPartida(partidaId) {
                 text: error.message || 'Ocurrió un error al eliminar la partida',
             });
         });
+    }
+    });
 }

@@ -60,7 +60,7 @@ module.exports = {
       // Luego, buscar la confirmación usando el ID del usuario
       const confirmation = await Confirmation.findOne({ confirmed: user._id }).populate({
         path: 'confirmed',
-        select: 'name lastName documentNumber mail role'
+        select: 'name lastName documentNumber mail role godfather'
       });
       
       if (!confirmation) {

@@ -73,8 +73,16 @@ module.exports = {
 
     getPendingRequestMasses: async (req, res) => {
         try {
-            const pendingMasses = await RequestMass.find({ status: 'Pendiente' }).populate('applicant');
-            res.status(200).json(pendingMasses);
+            const pendingMasses = await RequestMass.find({ status: 'Pendiente' })
+                .populate({
+                    path: 'applicant',
+                    select: 'name lastName',
+                    match: { _id: { $ne: null } } 
+                });
+        
+            const filteredMasses = pendingMasses.filter(mass => 
+                mass.applicant && mass.applicant.name && mass.applicant.lastName);
+            res.status(200).json(filteredMasses);
         } catch (error) {
             res.status(500).json({ message: "Error fetching pending request masses", error: error.message });
         }

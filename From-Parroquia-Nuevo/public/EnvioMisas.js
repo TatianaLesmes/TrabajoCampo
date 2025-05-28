@@ -121,7 +121,7 @@ function cargarMisaPendientes() {
                 row.innerHTML = `
                 <td>${partida.applicant.name}</td>
                 <td>${partida.applicant.lastName}</td>
-                 <td>${new Date(partida.date).toLocaleDateString()}</td>
+                <td>${formatDateForDisplay(partida.date)}</td>
                 <td>${partida.time}</td>
                 <td>${partida.status}</td>
                 <td>
@@ -170,7 +170,7 @@ function cargarMisaEnviadas() {
                 row.innerHTML = `
                 <td>${partida.applicant.name}</td>
                 <td>${partida.applicant.lastName}</td>
-                <td>${new Date(partida.date).toLocaleDateString()}</td>
+                <td>${formatDateForDisplay(partida.date)}</td>
                 <td>${partida.time}</td>
                 <td>${partida.status}</td>
                 
@@ -183,7 +183,15 @@ function cargarMisaEnviadas() {
             console.error('Error al cargar las partidas enviadas:', error);
         });
 }
-
+function formatDateForDisplay(isoString) {
+    const options = { 
+        timeZone: 'UTC', 
+        year: 'numeric', 
+        month: '2-digit', 
+        day: '2-digit' 
+    };
+    return new Date(isoString).toLocaleDateString('es-ES', options);
+}
 function enviarMisa(partidaId) {
     console.log('Intentando enviar partida con ID:', partidaId);
     fetch(`http://localhost:3000/requestMass/confirm/${partidaId}`, {
@@ -226,41 +234,51 @@ function enviarMisa(partidaId) {
 
 
 function EliminarMisa(partidaId) {
-    console.log('Intentando eliminar Misa con ID:', partidaId);
-    fetch(`http://localhost:3000/requestMass/${partidaId}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        },
-    })
-        .then(response => {
-            console.log('Respuesta recibida:', response);
-            if (!response.ok) {
-                return response.json().then(err => {
-                    console.error('Error en la respuesta:', err);
-                    throw new Error(err.message || `Error al eliminar la Misa. Estado: ${response.status}`);
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {   
+            if (result.isConfirmed) {
+            console.log('Intentando eliminar Misa con ID:', partidaId);
+            fetch(`http://localhost:3000/requestMass/${partidaId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
+                },
+            }).then(response => {
+                console.log('Respuesta recibida:', response);
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        console.error('Error en la respuesta:', err);
+                        throw new Error(err.message || `Error al eliminar la Misa. Estado: ${response.status}`);
+                    });
+                }
+                return response.json();
+            }).then(data => {
+                console.log('Misa eliminada exitosamente:', data);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: data.message || 'La solicitud de misa fue eliminada correctamente',
+                }).then(() => {
+                    cargarMisaPendientes();
+                    cargarMisaEnviadas();
                 });
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Misa eliminada exitosamente:', data);
-            Swal.fire({
-                icon: 'success',
-                title: 'Éxito',
-                text: data.message || 'La solicitud de misa fue eliminada correctamente',
-            }).then(() => {
-                cargarMisaPendientes();
-                cargarMisaEnviadas();
+            }).catch(error => {
+                console.error('Error detallado al eliminar la partida:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message || 'Ocurrió un error al eliminar la Misa',
+                });
             });
-        })
-        .catch(error => {
-            console.error('Error detallado al eliminar la partida:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al eliminar la Misa',
-            });
-        });
+      }
+   });
 }

@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         html: `
                     <input id="swal-input1" class="swal2-input" placeholder="Name" value="${data.name}">
                     <input id="swal-input2" class="swal2-input" placeholder="Last Name" value="${data.lastName}">
-                    <input id="swal-input3" class="swal2-input" placeholder="Email" value="${data.mail}">
                     <input id="swal-input4" class="swal2-input" placeholder="Document Number" value="${data.documentNumber}">
                 `,
                         focusConfirm: false,
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             return {
                                 name: document.getElementById('swal-input1').value,
                                 lastName: document.getElementById('swal-input2').value,
-                                mail: document.getElementById('swal-input3').value,
+                                mail: data.mail,
                                 documentNumber: document.getElementById('swal-input4').value
                             };
                         }

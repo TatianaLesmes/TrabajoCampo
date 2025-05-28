@@ -61,19 +61,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     </style>
         
-            <div class="container mt-3" style="overflow-y: auto; overflow-x;>
-  <div class="row">
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Calendario de Misas</h1>
-        <div id="calendario" class="mb-4"></div>
-        <div class="leyenda">
-            <div class="leyenda-item">
-                <div class="leyenda-color" style="background-color: #cce5ff;"></div>
-                <span>Misas disponibles</span>
+    <div class="container mt-3" style="overflow-y: auto; overflow-x;">
+        <div class="row">
+            <div>
+                <button class="btn btn-primary" id="btnPreciosMisas">
+                    Precios
+                </button>
             </div>
-            <div class="leyenda-item">
-                <div class="leyenda-color" style="background-color: #fff; border: 1px solid #dee2e6;"></div>
-                <span>Sin misas disponibles</span>
+            <div class="container mt-5">
+                <h1 class="text-center mb-4">Calendario de Misas</h1>
+                <div id="calendario" class="mb-4"></div>
+                <div class="leyenda">
+                    <div class="leyenda-item">
+                        <div class="leyenda-color" style="background-color: #cce5ff;"></div>
+                        <span>Misas disponibles</span>
+                    </div>
+                    <div class="leyenda-item">
+                        <div class="leyenda-color" style="background-color: #fff; border: 1px solid #dee2e6;"></div>
+                        <span>Sin misas disponibles</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -128,11 +135,76 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         </div>
     </div>
-  </div>
-</div>
 
+    <!-- Modal para precios -->
+    <div class="modal fade" id="preciosModal" tabindex="-1" aria-labelledby="preciosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preciosModalLabel">Precios de Misas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Tipo de Misa</th>
+                                    <th>Precio</th>
+                                    <th>Descripción</th>
+                                    <th>Métodos de Pago</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Misa Regular</td>
+                                    <td>$20.000</td>
+                                    <td>Misa común con intención general</td>
+                                    <td>Efectivo o Transferencia</td>
+                                </tr>
+                                <tr>
+                                    <td>Misa Especial</td>
+                                    <td>$50.000</td>
+                                    <td>Misa con intención específica y recordatorio</td>
+                                    <td>Efectivo o Transferencia</td>
+                                </tr>
+                                <tr>
+                                    <td>Misa de Aniversario</td>
+                                    <td>$80.000</td>
+                                    <td>Misa conmemorativa con mención especial</td>
+                                    <td>Efectivo o Transferencia</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4">
+                        <h6>Instrucciones para el pago:</h6>
+                        <ol>
+                            <li>Realice el pago por cualquiera de los métodos indicados</li>
+                            <li>Envíe el comprobante al WhatsApp de la parroquia</li>
+                            <li>Espere la confirmación de su solicitud</li>
+                        </ol>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="/img/QR.png" class="img-fluid" style="max-width: 200px;" alt="Código QR para pago">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
         `;
         mainContent.innerHTML = UserMisasHTML;
+        
+        // Configurar el botón de precios
+        document.getElementById('btnPreciosMisas').addEventListener('click', function(e) {
+            e.preventDefault();
+            const preciosModal = new bootstrap.Modal(document.getElementById('preciosModal'));
+            preciosModal.show();
+        });
+        
         SolicitarMisa();
     }
 
@@ -144,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
+// Resto del código de SolicitarMisa() permanece igual...
 function SolicitarMisa() {
     const calendarioEl = document.getElementById('calendario');
     let mesActual = new Date().getMonth();
@@ -229,6 +301,7 @@ function SolicitarMisa() {
 
     function mostrarHorarios(año, mes, dia) {
         const fecha = `${año}-${(mes + 1).toString().padStart(2, '0')}-${dia.toString().padStart(2, '0')}`;
+        console.log('Fecha seleccionada por el usuario (formato YYYY-MM-DD):', fecha);
             
             fetch(`http://localhost:3000/massSchedule/time-slots?date=${fecha}`)
                 .then(response => {
@@ -292,7 +365,7 @@ function SolicitarMisa() {
         const fecha = document.getElementById('fecha').value;
         const hora = document.getElementById('hora').value;
         const intencion = document.getElementById('intencion').value;
-
+        console.log('Fecha seleccionada por el usuario (formato YYYY-MM-DD):', fecha);
         if (!intencion) {
             alert('Por favor, ingresa la intención de la misa.');
             return;

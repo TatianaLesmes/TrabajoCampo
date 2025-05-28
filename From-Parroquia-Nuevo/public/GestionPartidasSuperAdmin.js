@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <a href="/" class="link-dark text-decoration-none">
                                                 <img src="/img/sacerdoteSidebar.png" alt="" width="32" height="32"
                                                     class="rounded-circle me-2">
-                                                <span>Funcionalidades</span>
+                                                <span>Bautismo</span>
                                             </a>
                                             <!-- Botón de toggler para el navbar -->
                                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -94,17 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             aria-expanded="false"
                                                             aria-controls="bautismosCardShow">
                                                             <i class="bi bi-eye me-2"></i> Mostrar
-                                                        </a>
-                                                    </li>
-                                                    <!-- Opción Eliminar -->
-                                                    <li class="nav-item">
-                                                        <a href="#"
-                                                            class="nav-link btn btn-light d-flex align-items-center" 
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#bautismosCardDelete" 
-                                                            aria-expanded="false"
-                                                            aria-controls="bautismosCardDelete">
-                                                            <i class="bi bi-trash me-2"></i> Eliminar
                                                         </a>
                                                     </li>
                                                     <!-- Opción Actualizar -->
@@ -183,10 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             <div class="col-12">
                                                                 <button class="btn btn-primary" type="submit">Registrar Bautismo</button>
                                                             </div>
-                                                            </form>
-                                                   
-                                                    
-                                                  
+                                                            </form> 
                                                 </div>
                                             </div>
                                         </div>
@@ -230,34 +216,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                                     </table>
 
                                                     </div>
-
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-item">
-                                            <div id="bautismosCardDelete" class="accordion-collapse collapse" data-bs-parent="#BautismosCardContainer2">
-                                                <div class="accordion-body">
-                                                    <h5 class="card-title"> Eliminar Partida</h5>
-                                                    Se eliminará la partida Bautismo con el número de documento
-
-                                                      <form class="row g-3 needs-validation" novalidate id="formularioEliminarBautismo">
-                                                        <div class="col-md-4">
-                                                            <label for="NumDocEliminarBautismo" class="form-label">Número de Documento</label>
-                                                            <input type="text" class="form-control" id="NumDocEliminarBautismo" required>
-                                                            <div class="valid-feedback">
-                                                                ¡Se ve bien!
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <button class="btn btn-primary" type="submit">Buscar</button>
-                                                        </div>
-                                                    </form>
-
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -303,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <a href="/" class="link-dark text-decoration-none">
                                                 <img src="/img/sacerdoteSidebar.png" alt="" width="32" height="32"
                                                     class="rounded-circle me-2">
-                                                <span>Sacerdote</span>
+                                                <span>Confirmación</span>
                                             </a>
                                             <!-- Botón de toggler para el navbar -->
                                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -334,17 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             aria-expanded="false"
                                                             aria-controls="ConfirmacionCardShow">
                                                             <i class="bi bi-eye me-2"></i> Mostrar
-                                                        </a>
-                                                    </li>
-                                                    <!-- Opción Eliminar -->
-                                                    <li class="nav-item">
-                                                        <a href="#"
-                                                            class="nav-link btn btn-light d-flex align-items-center"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#ConfirmacionCardDelete"
-                                                            aria-expanded="false"
-                                                            aria-controls="ConfirmacionCardDelete">
-                                                            <i class="bi bi-trash me-2"></i> Eliminar
                                                         </a>
                                                     </li>
                                                     <!-- Opción Actualizar -->
@@ -412,10 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             <div class="col-12">
                                                                 <button class="btn btn-primary" type="submit">Registrar Confirmación</button>
                                                             </div>
-                                                        </form>
-                                                             
-
-
+                                                        </form>                                                 
                                                 </div>
                                             </div>
                                         </div>
@@ -465,28 +409,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
 
                                         <div class="accordion-item">
-                                            <div id="ConfirmacionCardDelete" class="accordion-collapse collapse" data-bs-parent="#ConfirmacionesCardContainer">
-                                                <div class="accordion-body">
-                                                    <h5 class="card-title"> Eliminar Confirmacion</h5>
-                                                    Se eliminará la partida de confirmación con el número de documento
-
-                                                      <form class="row g-3 needs-validation" novalidate id="formularioEliminarConfirmacion">
-                                                        <div class="col-md-4">
-                                                            <label for="NumDocEliminarConfirmacion" class="form-label">Número de Documento</label>
-                                                            <input type="text" class="form-control" id="NumDocEliminarConfirmacion" required>
-                                                            <div class="valid-feedback">
-                                                                ¡Se ve bien!
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <button class="btn btn-primary" type="submit">Buscar</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-item">
                                             <div id="ConfirmacionCardUpdate" class="accordion-collapse collapse" data-bs-parent="#ConfirmacionesCardContainer">
                                                 <div class="accordion-body">
                                                     <h5 class="card-title">Actualizar confirmación</h5>
@@ -508,13 +430,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                             </div>
                                         </div>
                                     </div>
-
-
-                                 
-
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -536,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <a href="/" class="link-dark text-decoration-none">
                                                 <img src="/img/sacerdoteSidebar.png" alt="" width="32" height="32"
                                                     class="rounded-circle me-2">
-                                                <span>Sacerdote</span>
+                                                <span>Matrimonio</span>
                                             </a>
                                             <!-- Botón de toggler para el navbar -->
                                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -567,17 +482,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             aria-expanded="false"
                                                             aria-controls="MatrimonioCardShow">
                                                             <i class="bi bi-eye me-2"></i> Mostrar
-                                                        </a>
-                                                    </li>
-                                                    <!-- Opción Eliminar -->
-                                                    <li class="nav-item">
-                                                        <a href="#"
-                                                            class="nav-link btn btn-light d-flex align-items-center"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#MatrimonioCardDelete"
-                                                            aria-expanded="false"
-                                                            aria-controls="MatrimonioCardDelete">
-                                                            <i class="bi bi-trash me-2"></i> Eliminar
                                                         </a>
                                                     </li>
                                                     <!-- Opción Actualizar -->
@@ -725,30 +629,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
 
                                         <div class="accordion-item">
-                                            <div id="MatrimonioCardDelete" class="accordion-collapse collapse" data-bs-parent="#MatrimonioCardContainer1">
-                                                <div class="accordion-body">
-                                                    <h5 class="card-title"> Eliminar Matrimonio</h5>
-                                                  
-                                                      Se eliminará la partida Matrimonio con el número de documento
-
-                                                      <form class="row g-3 needs-validation" novalidate id="formularioEliminarMatrimonio">
-                                                        <div class="col-md-4">
-                                                            <label for="NumDocEliminarMatrimonio" class="form-label">Número de Documento</label>
-                                                            <input type="text" class="form-control" id="NumDocEliminarMatrimonio" required>
-                                                            <div class="valid-feedback">
-                                                                ¡Se ve bien!
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <button class="btn btn-primary" type="submit">Buscar</button>
-                                                        </div>
-                                                    </form>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-item">
                                             <div id="MatrimonioCardUpdate" class="accordion-collapse collapse" data-bs-parent="#MatrimonioCardContainer1">
                                                 <div class="accordion-body">
                                                     <h5 class="card-title">Actualizar Matrimonio</h5>
@@ -795,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <a href="/" class="link-dark text-decoration-none">
                                                 <img src="/img/sacerdoteSidebar.png" alt="" width="32" height="32"
                                                     class="rounded-circle me-2">
-                                                <span>Sacerdote</span>
+                                                <span>Defunción</span>
                                             </a>
                                             <!-- Botón de toggler para el navbar -->
                                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -826,17 +706,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             aria-expanded="false"
                                                             aria-controls="DefuncionCardShow">
                                                             <i class="bi bi-eye me-2"></i> Mostrar
-                                                        </a>
-                                                    </li>
-                                                    <!-- Opción Eliminar -->
-                                                    <li class="nav-item">
-                                                        <a href="#"
-                                                            class="nav-link btn btn-light d-flex align-items-center"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#DefuncionCardDelete"
-                                                            aria-expanded="false"
-                                                            aria-controls="DefuncionCardDelete">
-                                                            <i class="bi bi-trash me-2"></i> Eliminar
                                                         </a>
                                                     </li>
                                                     <!-- Opción Actualizar -->
@@ -964,28 +833,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
 
                                         <div class="accordion-item">
-                                            <div id="DefuncionCardDelete" class="accordion-collapse collapse" data-bs-parent="#DefuncionCardContainer2">
-                                                <div class="accordion-body">
-                                                    <h5 class="card-title"> Eliminar Defuncion</h5>
-                                                    Se eliminará la partida Matrimonio con el número de documento
-
-                                                      <form class="row g-3 needs-validation" novalidate id="formularioEliminarDefuncion">
-                                                        <div class="col-md-4">
-                                                            <label for="NumDocEliminarDefuncion" class="form-label">Número de Documento</label>
-                                                            <input type="text" class="form-control" id="NumDocEliminarDefuncion" required>
-                                                            <div class="valid-feedback">
-                                                                ¡Se ve bien!
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <button class="btn btn-primary" type="submit">Buscar</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-item">
                                             <div id="DefuncionCardUpdate" class="accordion-collapse collapse" data-bs-parent="#DefuncionCardContainer2">
                                                 <div class="accordion-body">
                                                     <h5 class="card-title">Actualizar Defuncion</h5>
@@ -1059,26 +906,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const formDefuncion = document.getElementById('formulariobuscarDefuncion');
         if (formDefuncion) {
             formDefuncion.addEventListener('submit', buscarDefuncion);
-        }
-
-        const formEliminarBautismo = document.getElementById('formularioEliminarBautismo');
-        if (formEliminarBautismo) {
-            formEliminarBautismo.addEventListener('submit', buscarYEliminarBautismo);
-        }
-
-        const formEliminarConfirmacion = document.getElementById('formularioEliminarConfirmacion');
-        if (formEliminarConfirmacion) {
-            formEliminarConfirmacion.addEventListener('submit', buscarYEliminarConfirmacion);
-        }
-
-        const formEliminarMatrimonio = document.getElementById('formularioEliminarMatrimonio');
-        if (formEliminarMatrimonio) {
-            formEliminarMatrimonio.addEventListener('submit', buscarYEliminarMatrimonio);
-        }
-
-        const formEliminarDefuncion = document.getElementById('formularioEliminarDefuncion');
-        if (formEliminarDefuncion) {
-            formEliminarDefuncion.addEventListener('submit', buscarYEliminarDefuncion);
         }
 
         const formActualizarDefuncion = document.getElementById('formularioActualizarDefuncion');
@@ -1466,7 +1293,7 @@ function buscarConfirmacion(event) {
             row.insertCell(2).textContent = data.confirmed.documentNumber;
             row.insertCell(3).textContent = data.confirmed.mail;
             row.insertCell(4).textContent = new Date(data.confirmationDate).toLocaleDateString();
-            row.insertCell(5).textContent = data.godfather1 || 'N/A';
+            row.insertCell(5).textContent = data.godfather || 'N/A';
 
             document.getElementById('formulariobuscarConfirmacion').reset();
 
@@ -1605,349 +1432,6 @@ function buscarDefuncion(event) {
         });
 }
 
-
-//aca empieza eliminar para todas las partidas
-function buscarYEliminarBautismo(event) {
-    event.preventDefault();
-
-    const documentNumber = document.getElementById('NumDocEliminarBautismo').value.trim();
-
-    // Primero, buscar el bautismo
-    fetch(`http://localhost:3000/baptism/${documentNumber}`, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Bautismo no encontrado');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Mostrar la información y pedir confirmación
-            Swal.fire({
-                title: '¿Estás seguro de eliminar este bautismo?',
-                html: `
-                <p><strong>Nombre:</strong> ${data.baptized.name}</p>
-                <p><strong>Apellido:</strong> ${data.baptized.lastName}</p>
-                <p><strong>Documento:</strong> ${data.baptized.documentNumber}</p>
-                <p><strong>Correo:</strong> ${data.baptized.mail}</p>
-            `,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, eliminar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si el usuario confirma, proceder con la eliminación
-                    eliminarBautismo(documentNumber);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al buscar el bautismo',
-            });
-        });
-}
-
-function eliminarBautismo(documentNumber) {
-    fetch(`http://localhost:3000/baptism/${documentNumber}`, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al eliminar el bautismo');
-            }
-            return response.json();
-        })
-        .then(data => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Éxito',
-                text: 'Bautismo eliminado correctamente',
-            });
-            // Limpiar el formulario
-            document.getElementById('formularioEliminarBautismo').reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al eliminar el bautismo',
-            });
-        });
-}
-
-
-
-
-
-function buscarYEliminarConfirmacion(event) {
-    event.preventDefault();
-
-    const documentNumber = document.getElementById('NumDocEliminarConfirmacion').value.trim();
-
-    // Primero, buscar el bautismo
-    fetch(`http://localhost:3000/confirmation/${documentNumber}`, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Confirmación no encontrado');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Mostrar la información y pedir confirmación
-            Swal.fire({
-                title: '¿Estás seguro de eliminar este Confirmación?',
-                html: `
-                <p><strong>Nombre:</strong> ${data.confirmed.name}</p>
-                <p><strong>Apellido:</strong> ${data.confirmed.lastName}</p>
-                <p><strong>Documento:</strong> ${data.confirmed.documentNumber}</p>
-                <p><strong>Correo:</strong> ${data.confirmed.mail}</p>
-            `,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, eliminar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si el usuario confirma, proceder con la eliminación
-                    eliminarConfirmacion(documentNumber);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al buscar el Confirmación',
-            });
-        });
-}
-
-function eliminarConfirmacion(documentNumber) {
-    fetch(`http://localhost:3000/confirmation/${documentNumber}`, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al eliminar el Confirmación');
-            }
-            return response.json();
-        })
-        .then(data => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Éxito',
-                text: 'Confirmación eliminado correctamente',
-            });
-            // Limpiar el formulario
-            document.getElementById('formularioEliminarConfirmacion').reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al eliminar el Confirmación',
-            });
-        });
-}
-
-function buscarYEliminarMatrimonio(event) {
-    event.preventDefault();
-
-    const documentNumber = document.getElementById('NumDocEliminarMatrimonio').value.trim();
-
-    // Primero, buscar el bautismo
-    fetch(`http://localhost:3000/marriage/${documentNumber}`, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Matrimonio no encontrado');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Mostrar la información y pedir confirmación
-            Swal.fire({
-                title: '¿Estás seguro de eliminar este Matrimonio?',
-                html: `
-                <p><strong>Nombre Esposo:</strong> ${data.husband.name}</p>
-                <p><strong>Apellido Esposo:</strong> ${data.husband.lastName}</p>
-                <p><strong>Documento Esposo:</strong> ${data.husband.documentNumber}</p>
-                <p><strong>Nombre Esposa:</strong> ${data.wife.name}</p>
-                <p><strong>Apellido Esposa:</strong> ${data.wife.lastName}</p>
-                <p><strong>Documento Esposa:</strong> ${data.wife.documentNumber}</p>
-                <p><strong>Correo:</strong> ${data.husband.mail}</p>
-            `,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, eliminar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si el usuario confirma, proceder con la eliminación
-                    eliminarMatrimonio(documentNumber);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al buscar el Matrimonio',
-            });
-        });
-}
-
-function eliminarMatrimonio(documentNumber) {
-    fetch(`http://localhost:3000/marriage/${documentNumber}`, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al eliminar el Matrimonio');
-            }
-            return response.json();
-        })
-        .then(data => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Éxito',
-                text: 'Matrimonio eliminado correctamente',
-            });
-            // Limpiar el formulario
-            document.getElementById('formularioEliminarMatrimonio').reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al eliminar el Matrimonio',
-            });
-        });
-}
-
-
-function buscarYEliminarDefuncion(event) {
-    event.preventDefault();
-
-    const documentNumber = document.getElementById('NumDocEliminarDefuncion').value.trim();
-
-    // Primero, buscar el bautismo
-    fetch(`http://localhost:3000/death/${documentNumber}`, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Defuncion no encontrado');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Mostrar la información y pedir confirmación
-            Swal.fire({
-                title: '¿Estás seguro de eliminar este Defuncion?',
-                html: `
-                <p><strong>Nombre :</strong> ${data.dead.name}</p>
-                <p><strong>Apellido:</strong> ${data.dead.lastName}</p>
-                <p><strong>Documento Esp:</strong> ${data.dead.documentNumber}</p>
-
-                <p><strong>Correo:</strong> ${data.dead.mail}</p>
-            `,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, eliminar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si el usuario confirma, proceder con la eliminación
-                    eliminarDefuncion(documentNumber);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al buscar el Defuncion',
-            });
-        });
-}
-
-function eliminarDefuncion(documentNumber) {
-    fetch(`http://localhost:3000/death/${documentNumber}`, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al eliminar el Defuncion');
-            }
-            return response.json();
-        })
-        .then(data => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Éxito',
-                text: 'Defuncion eliminado correctamente',
-            });
-            // Limpiar el formulario
-            document.getElementById('formularioEliminarDefuncion').reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al eliminar el Matrimonio',
-            });
-        });
-}
-
 //actualizar de las partidas 
 
 
@@ -1972,99 +1456,120 @@ function buscarYEditarDefuncion(event) {
             'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
         }
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Defunción no encontrada');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Verificar si los datos son válidos
-            if (!data || typeof data !== 'object' || Object.values(data).every(val => val === undefined)) {
-                throw new Error('No se encontraron datos válidos para esta defunción');
-            }
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Defunción no encontrada');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Verificar si los datos son válidos
+        if (!data || typeof data !== 'object' || Object.values(data).every(val => val === undefined)) {
+            throw new Error('No se encontraron datos válidos para esta defunción');
+        }
 
-            // Mostrar la información en un modal editable
-            Swal.fire({
-                title: 'Editar Defunción',
-                html: `
-                <div class="swal2-input-group">
-                    <label for="swal-input-civil-status">Estado Civil:</label>
-                    <select id="swal-input-civil-status" class="swal2-select">
-                        <option value="">Seleccione una opción</option>
-                        <option value="soltero" ${data.civilStatus === 'soltero' ? 'selected' : ''}>Soltero</option>
-                        <option value="casado" ${data.civilStatus === 'casado' ? 'selected' : ''}>Casado</option>
-                        <option value="union libre" ${data.civilStatus === 'union libre' ? 'selected' : ''}>Unión Libre</option>
-                    </select>
-                </div
-                <div class="swal2-input-group">
-                    <label for="swal-input-cemetery"> Cementerio:</label>
-                    <input id="swal-input-cemetery" class="swal2-input" value="${data.cemeteryName || ''}" placeholder="Nombre del cementerio">
-                </div>
-                <div class="swal2-input-group">
-                    <label for="swal-input-funeral-date">Fecha del Funeral:</label>
-                    <input id="swal-input-funeral-date" class="swal2-input" type="date" value="${data.funeralDate || ''}" placeholder="Fecha del Funeral">
-                </div>
+        // Obtener la fecha actual en formato YYYY-MM-DD
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const maxDate = today.toISOString().split('T')[0];
+
+        // Mostrar la información en un modal editable
+        Swal.fire({
+            title: 'Editar Defunción',
+            html: `
+            <div class="swal2-input-group">
+                <label for="swal-input-cemetery">Cementerio:</label>
+                <input id="swal-input-cemetery" class="swal2-input" value="${data.cemeteryName || ''}" placeholder="Nombre del cementerio">
+            </div>
+            <div class="swal2-input-group">
+                <label for="swal-input-funeral-date">Fecha del Funeral:</label>
+                <input id="swal-input-funeral-date" class="swal2-input" type="date" 
+                       value="${data.funeralDate || ''}" 
+                       placeholder="Fecha del Funeral"
+                       max="${maxDate}">
+            </div>
             `,
-                focusConfirm: false,
-                showCancelButton: true,
-                confirmButtonText: 'Actualizar',
-                cancelButtonText: 'Cancelar',
-                preConfirm: () => {
-                    return {
-                        civilStatus: document.getElementById('swal-input-civil-status').value,
-                        cemeteryName: document.getElementById('swal-input-cemetery').value,
-                        funeralDate: document.getElementById('swal-input-funeral-date').value,
+            focusConfirm: false,
+            showCancelButton: true,
+            confirmButtonText: 'Guardar Cambios',
+            cancelButtonText: 'Cancelar',
+            preConfirm: () => {
+                const funeralDate = document.getElementById('swal-input-funeral-date').value;
+                const cemeteryName = document.getElementById('swal-input-cemetery').value;
+                
+                // Validar que la fecha no sea futura (aunque el input lo impide, es buena práctica validar)
+                if (new Date(funeralDate) > today) {
+                    Swal.showValidationMessage('La fecha del funeral no puede ser posterior a hoy');
+                    return false;
+                }
+                
+                return {
+                    cemeteryName: cemeteryName,
+                    funeralDate: funeralDate,
+                }
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Mostrar modal de confirmación antes de actualizar
+                Swal.fire({
+                    title: '¿Confirmar cambios?',
+                    text: "¿Estás seguro de que deseas actualizar esta defunción?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, actualizar',
+                    cancelButtonText: 'Cancelar'
+                }).then((confirmation) => {
+                    if (confirmation.isConfirmed) {
+                        actualizarDefuncion(documentNumber, result.value);
                     }
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    actualizarDefuncion(documentNumber, result.value);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al buscar la defunción',
-            });
+                });
+            }
         });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error.message || 'Ocurrió un error al buscar la defunción',
+        });
+    });
 }
-
-function actualizarDefuncion(documentNumber, datosActualizados) {
+function actualizarDefuncion(documentNumber, updatedData) {
     fetch(`http://localhost:3000/death/${documentNumber}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem('tokenSession')}`
         },
-        body: JSON.stringify(datosActualizados)
+        body: JSON.stringify(updatedData)
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al actualizar la defunción');
-            }
-            return response.json();
-        })
-        .then(data => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Éxito',
-                text: 'La defunción ha sido actualizada correctamente',
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => {
+                throw new Error(err.message || 'Error al actualizar la defunción');
             });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: error.message || 'Ocurrió un error al actualizar la defunción',
-            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: 'Defunción actualizada correctamente',
         });
+    })
+    .catch(error => {
+        console.error('Error al actualizar:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error.message || 'Ocurrió un error al actualizar la defunción',
+        });
+    });
 }
-
 
 
 
@@ -2126,7 +1631,7 @@ function buscarYEditarMatrimonio(event) {
             `,
                 focusConfirm: false,
                 showCancelButton: true,
-                confirmButtonText: 'Actualizar',
+                confirmButtonText: 'Guardar Cambios',
                 cancelButtonText: 'Cancelar',
                 preConfirm: () => {
                     return {
@@ -2139,8 +1644,21 @@ function buscarYEditarMatrimonio(event) {
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    actualizarMatrimonio(documentNumber, result.value);
-                }
+                    Swal.fire({
+                        title: '¿Confirmar cambios?',
+                        text: "¿Estás seguro de que deseas actualizar esta partida de matrimonio?",
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, actualizar',
+                        cancelButtonText: 'Cancelar'
+                    }).then((confirmation) => {
+                        if (confirmation.isConfirmed) {
+                            actualizarMatrimonio(documentNumber, result.value);
+                        }
+                        });
+                    }
             });
         })
         .catch(error => {
@@ -2242,7 +1760,7 @@ function buscarYEditarBautismo(event) {
             `,
                 focusConfirm: false,
                 showCancelButton: true,
-                confirmButtonText: 'Actualizar',
+                confirmButtonText: 'Guardar cambios',
                 cancelButtonText: 'Cancelar',
                 preConfirm: () => {
                     return {
@@ -2255,7 +1773,20 @@ function buscarYEditarBautismo(event) {
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    actualizarBautismo(documentNumber, result.value);
+                    Swal.fire({
+                        title: '¿Confirmar cambios?',
+                        text: "¿Estás seguro de que deseas actualizar esta partida de bautismo?",
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, actualizar',
+                        cancelButtonText: 'Cancelar'
+                    }).then((confirmation) => {
+                        if (confirmation.isConfirmed) {
+                            actualizarBautismo(documentNumber, result.value);
+                        }
+                    });
                 }
             });
         })
@@ -2357,7 +1888,7 @@ function buscarYEditarConfirmacion(event) {
             `,
                 focusConfirm: false,
                 showCancelButton: true,
-                confirmButtonText: 'Actualizar',
+                confirmButtonText: 'Guardar Cambios',
                 cancelButtonText: 'Cancelar',
                 preConfirm: () => {
                     return {
@@ -2370,7 +1901,20 @@ function buscarYEditarConfirmacion(event) {
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    actualizarConfirmacion(documentNumber, result.value);
+                    Swal.fire({
+                        title: '¿Confirmar cambios?',
+                        text: "¿Estás seguro de que deseas actualizar esta partida de confirmación?",
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, actualizar',
+                        cancelButtonText: 'Cancelar'
+                    }).then((confirmation) => {
+                        if (confirmation.isConfirmed) {
+                            actualizarConfirmacion(documentNumber, result.value);
+                        }
+                    });
                 }
             });
         })
