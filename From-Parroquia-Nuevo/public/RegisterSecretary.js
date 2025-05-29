@@ -357,6 +357,7 @@ function verifyCode() {
         messageDiv.innerHTML = '<div class="alert alert-danger">Por favor, ingrese el código de verificación.</div>';
         return;
     }
+const token = localStorage.getItem('token');
 
     fetch('http://localhost:3000/auth/verify-Code', {
         method: 'POST',
@@ -412,7 +413,7 @@ function registerUserAdmin(event) {
         password,
         role: "Admin"
     };
-
+ const token = localStorage.getItem('token');
     fetch('http://localhost:3000/auth/register', {
         method: 'POST',
         headers: {
