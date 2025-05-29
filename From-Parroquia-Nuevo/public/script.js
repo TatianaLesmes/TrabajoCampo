@@ -1,3 +1,37 @@
+ document.addEventListener("DOMContentLoaded", function () {
+        const collapseContent = document.getElementById('collapseContent');
+        const bloqueSalmo = document.getElementById('bloqueSalmo'); // Asegúrate de que tu bloque tenga este ID
+        const textoSalmo = document.getElementById("textoSalmo");
+        const referenciaSalmo = document.getElementById("referenciaSalmo");
+
+        // Mostrar/ocultar salmo según estado del colapsable
+        if (collapseContent && bloqueSalmo) {
+            collapseContent.addEventListener('show.bs.collapse', () => {
+                bloqueSalmo.classList.add('d-none');
+            });
+
+            collapseContent.addEventListener('hide.bs.collapse', () => {
+                bloqueSalmo.classList.remove('d-none');
+            });
+        }
+
+        // Obtener el Salmo del Día
+        fetch('http://localhost:3000/api/salmo', { cache: 'no-store' })
+            .then(response => response.json())
+            .then(data => {
+                if (textoSalmo) {
+                    textoSalmo.textContent = data.texto ? `"${data.texto.trim()}"` : "No se encontró el salmo.";
+                }
+
+                if (referenciaSalmo && data.referencia) {
+                    referenciaSalmo.textContent = data.referencia;
+                }
+            })
+            .catch(error => {
+                console.error("Error al obtener el salmo:", error);
+            });
+    });
+
 function nextSlide() {
     const carousel = new bootstrap.Carousel(document.getElementById('registerCarousel'));
     const activeItem = document.querySelector('.carousel-item.active');
