@@ -154,13 +154,6 @@ function verifyCode() {
 
 
 
-
-
-
-
-
-
-
 function registerUser() {
     const name = document.getElementById('name').value;
     const lastName = document.getElementById('lastName').value;
@@ -176,9 +169,6 @@ function registerUser() {
         messageDiv.innerHTML = '<div class="alert alert-danger">Por favor, complete todos los campos.</div>';
         return;
     }
-
-
-
 
     const userData = {
         name,

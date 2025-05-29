@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                     </div>
                                                     <div id="emailVerificationSecretary" class="mt-2"></div>
 
-                                                    <button type="button" class="btn btn-primary" " 
+                                                    <button type="button" class="btn btn-primary"
                                                     id="CheckEmail">Siguiente</button>
 
                                                    <button type="button" class="btn btn-primary" id="ViewTable" data-bs-toggle="modal" data-bs-target="#usersModal">Usuarios</button>
@@ -273,6 +273,8 @@ function initializeFormFunctionality() {
     }
 
     const checkEmailButton = document.getElementById('CheckEmail');
+     
+    
     if (checkEmailButton) {
         checkEmailButton.addEventListener('click', async function (event) {
             event.preventDefault();
@@ -381,8 +383,7 @@ function verifyCode() {
 
 
 function registerUserAdmin(event) {
-    event.preventDefault(); // Esto evita que el formulario se envíe automáticamente
-
+    event.preventDefault();
     const name = document.getElementById('NameSecretary').value;
     const lastName = document.getElementById('LastNameSecretary').value;
     const birthdate = document.getElementById('birthdateSecretary').value;
@@ -452,6 +453,3 @@ function registerUserAdmin(event) {
             }
         });
 }
-
-
-
