@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleGestionMisasClick(e) {
         e.preventDefault();
+        console.log('Click en solicitud de partida'); // <-- ¿Se muestra esto?
         const SolicitudPartidashtml = `
         <div class="container px-4 py-5">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
@@ -80,9 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
         mainContent.innerHTML = SolicitudPartidashtml;
 
         // Agregar event listeners para los botones de solicitud
-        document.getElementById('SolicitudDePartidaBautismo')?.addEventListener('click', () => solicitarPartida('Bautismo'));
-        document.getElementById('SolicitudDePartidaConfirmacion')?.addEventListener('click', () => solicitarPartida('Confirmación'));
-        document.getElementById('SolicitudDePartidaMatrimonio')?.addEventListener('click', () => solicitarPartida('Matrimonio'));
+        document.getElementById('SolicitudDePartidaBautismo')?.addEventListener('click', () => solicitarPartida('Baptism'));
+        document.getElementById('SolicitudDePartidaConfirmacion')?.addEventListener('click', () => solicitarPartida('Confirmation'));
+        document.getElementById('SolicitudDePartidaMatrimonio')?.addEventListener('click', () => solicitarPartida('Marriage')); 
 
         // Agregar event listeners para los botones de precio
         setupPreciosButtons();

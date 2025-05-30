@@ -121,7 +121,7 @@ function cargarMisaPendientes() {
                 row.innerHTML = `
                 <td>${partida.applicant.name}</td>
                 <td>${partida.applicant.lastName}</td>
-                <td>${formatDateForDisplay(partida.date)}</td>
+                 <td>${new Date(partida.date).toLocaleDateString()}</td>
                 <td>${partida.time}</td>
                 <td>${partida.status}</td>
                 <td>
@@ -170,7 +170,7 @@ function cargarMisaEnviadas() {
                 row.innerHTML = `
                 <td>${partida.applicant.name}</td>
                 <td>${partida.applicant.lastName}</td>
-                <td>${formatDateForDisplay(partida.date)}</td>
+                <td>${new Date(partida.date).toLocaleDateString()}</td>
                 <td>${partida.time}</td>
                 <td>${partida.status}</td>
                 
